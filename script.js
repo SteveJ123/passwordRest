@@ -12,15 +12,39 @@ function displayPasswordDoNotMatch(){
     document.querySelector(".password-do-not-match").style.display = "block";
 }
 
+function passwordText(){
+
+    if(/^[a-zA-Z]+$/.test(password)){
+        alert("password contain only alphabet");
+        return false;
+    }
+    return true;
+}
+
+function passwordLength(){
+    let passwordTextLength = password.length;
+    if(passwordTextLength < 8){
+        alert("password lenght less than 8");
+        return false;
+    }        
+    return true;
+    
+}
+
 function checkPassword(){
     console.log("inside");
-    if(password === repassword){
-        console.log("same"); 
-        displayPasswordMatch();       
-    }else{
-        console.log("not match");
-        displayPasswordDoNotMatch();
+    if(!passwordLength() && !passwordText()){
+        return;
+    } else{
+        if(password === repassword){
+            console.log("same"); 
+            displayPasswordMatch();       
+        }else{
+            console.log("not match");
+            displayPasswordDoNotMatch();
+        }
     }
+    
 }
 
 function passwordValue(){   
