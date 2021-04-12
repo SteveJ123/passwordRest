@@ -33,7 +33,7 @@ function passwordLength(){
 
 function checkPassword(){
     console.log("inside");
-    if(!passwordLength() && !passwordText()){
+    if(!(!passwordLength() && !passwordText())){
         return;
     } else{
         if(password === repassword){
