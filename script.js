@@ -33,9 +33,11 @@ function passwordLength(){
 
 function checkPassword(){
     console.log("inside");
-    if(!(!passwordLength() && !passwordText())){
+    if(!passwordLength()){
         return;
-    } else{
+    } else if(!passwordText()){
+        return;
+    }else{
         if(password === repassword){
             console.log("same"); 
             displayPasswordMatch();       
